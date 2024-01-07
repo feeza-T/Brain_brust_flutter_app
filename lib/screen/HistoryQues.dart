@@ -9,28 +9,28 @@ import 'package:brain_brust/widgets/sidenavbar.dart';
 class HistoryQues extends StatelessWidget {
   final List<Map<String, dynamic>> questions = [
     {
-      'question': 'baygyy8u?',
-      'options': ['a) Brazil', 'b) Germany', 'c) Argentina', 'd) Italy'],
+      'question': 'Who was the first President of the United States?',
+      'options': ['a) Thomas Jefferson', 'b) George Washington', 'c) John Adams', 'd) James Madison'],
     },
     {
-      'question': 'In basketball, what is the standard height for an NBA basketball hoop from the floor?',
-      'options': ['a) 10 feet', 'b) 11 feet', 'c) 9 feet', 'd) 12 feet'],
+      'question': 'Which ancient civilization built the famous Machu Picchu citadel in Peru?',
+      'options': ['a) Aztecs', 'b) Incas', 'c) Mayans', 'd) Egyptians'],
     },
     {
-      'question': 'What is the national sport of Japan?',
-      'options': ['a) Judo', 'b) Sumo wrestling', 'c) Kendo', 'd) Karate'],
+      'question': 'The French Revolution began in which year?',
+      'options': ['a) 1789', 'b) 1799', 'c) 1803', 'd) 1783'],
     },
     {
-      'question': 'Which NFL team has won the most Super Bowl championships?',
-      'options': ['a) New England Patriots', 'b) Dallas Cowboys', 'c) Pittsburgh Steelers', 'd) Green Bay Packers'],
+      'question': 'Who was the first female Prime Minister of the United Kingdom?',
+      'options': ['a) Margaret Thatcher', 'b) Theresa May', 'c) Angela Merkel', 'd) Indira Gandhi'],
     },
     {
-      'question': 'Who is the all-time leading scorer in the history of the NBA?',
-      'options': ['a) LeBron James', 'b) Michael Jordan', 'c) Kareem Abdul-Jabbar', 'd) Kobe Bryant'],
+      'question': 'The Battle of Hastings in 1066 marked the conquest of England by which leader?',
+      'options': ['a) William the Conqueror', 'b) Richard the Lionheart', 'c) Harold Godwinson', 'd) Edward the Confessor'],
     },
     {
-      'question': 'In golf, what is the term for scoring one stroke under par on a hole?',
-      'options': ['a) Eagle', 'b) Birdie', 'c) Albatross', 'd) Bogey'],
+      'question': 'Which event is known as the start of World War I?',
+      'options': ['a) The assassination of Archduke Franz Ferdinand', 'b) The sinking of the Lusitania', 'c) The Battle of the Somme', 'd) The Treaty of Versailles'],
     },
 
   ];
