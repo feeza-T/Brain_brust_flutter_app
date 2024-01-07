@@ -1,3 +1,5 @@
+import 'package:brain_brust/screen/EntertainmentQues.dart';
+import 'package:brain_brust/screen/GeographyQues.dart';
 import 'package:brain_brust/screen/ScienceQues.dart';
 import 'package:flutter/material.dart';
 import 'package:brain_brust/widgets/sidenavbar.dart';
@@ -137,6 +139,16 @@ class QuizIntro extends StatelessWidget {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => HistoryQues()),
+      );
+    }else if (quizType == 'EntertainmentQues') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => EntertaimentQues()),
+      );
+    }else if (quizType == 'GeographyQues') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => GeographyQues()),
       );
     }
   }

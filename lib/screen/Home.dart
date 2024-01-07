@@ -254,7 +254,7 @@ class _HomeState extends State<Home> {
                 child:GestureDetector(
                   onTap: (){
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context)=>const QuizIntro(quizType: 'SportsQues',))
+                        MaterialPageRoute(builder: (context)=>const QuizIntro(quizType: 'GeographyQues',))
                     );
                   },
                     child:Stack(
@@ -406,7 +406,7 @@ class _HomeState extends State<Home> {
                 child:GestureDetector(
                   onTap: (){
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context)=>const QuizIntro(quizType: 'SportsQues',))
+                        MaterialPageRoute(builder: (context)=>const QuizIntro(quizType: 'EntertainmentQues',))
                     );
                   },
                     child:Stack(
