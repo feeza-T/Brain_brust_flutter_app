@@ -2,21 +2,22 @@ import 'package:brain_brust/screen/ScienceQues.dart';
 import 'package:flutter/material.dart';
 import 'package:brain_brust/widgets/sidenavbar.dart';
 
+import 'HistoryQues.dart';
+import 'SportsQues.dart';
+
 class QuizIntro extends StatelessWidget {
-  const QuizIntro({super.key});
+  final String quizType;
+
+  const QuizIntro({Key? key, required this.quizType}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: ElevatedButton(
-        child:
-        Text('START QUIZ' ,style:TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),
-        onPressed: (){
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => ScienceQues()),
-          );
+        child: Text('START QUIZ', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+        onPressed: () {
+          _navigateToQuiz(context);
         },
       ),
        appBar: AppBar(
@@ -29,7 +30,7 @@ class QuizIntro extends StatelessWidget {
          child: Container(
          padding: EdgeInsets.only(bottom: 40),
          child:
-         
+
          Column(
                crossAxisAlignment: CrossAxisAlignment.start,
                children: [
@@ -66,8 +67,8 @@ class QuizIntro extends StatelessWidget {
               ),
                 Text('Science, History,Geography,Sports,Entertainment',style:TextStyle(fontSize:17 ))
               ],
-         
-         
+
+
             ),
           ),
           Container(
@@ -85,8 +86,8 @@ class QuizIntro extends StatelessWidget {
               ),
                 Text('10 minutes',style:TextStyle(fontSize:17 ))
               ],
-         
-         
+
+
             ),
           ),
           Container(
@@ -106,8 +107,8 @@ class QuizIntro extends StatelessWidget {
                 Text('Diverse Topics:Explore a vast array of subjects, from the mysteries of the universe to the defining moments in history. Our carefully crafted quizzes cover science, history, sports, and various other fascinating topics. Whether you are a seasoned quizzer or a curious learner, there is something for everyone.',style:TextStyle(fontSize:17 )),
                 Text(' Challenge Yourself:  Put your intellect to the test with our thought-provoking questions. BRAIN BURST is designed to stimulate your mind, encourage curiosity, and provide a fun way to learn new things.',style:TextStyle(fontSize:17 )),
               ],
-         
-         
+
+
             ),
           )
            ],
@@ -117,5 +118,26 @@ class QuizIntro extends StatelessWidget {
     );
 
 
+  }
+
+
+
+  void _navigateToQuiz(BuildContext context) {
+    if (quizType == 'ScienceQues') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => ScienceQues()),
+      );
+    } else if (quizType == 'SportsQues') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => SportsQues()),
+      );
+    }else if (quizType == 'HistoryQues') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => HistoryQues()),
+      );
+    }
   }
 }

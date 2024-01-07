@@ -4,6 +4,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 
+import 'ScienceQues.dart';
+
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -100,14 +102,14 @@ class _HomeState extends State<Home> {
                   child:GestureDetector(
                  onTap: (){
                    Navigator.push(context,
-                       MaterialPageRoute(builder: (context)=>const QuizIntro())
+                       MaterialPageRoute(builder: (context)=>const QuizIntro(quizType: 'ScienceQues',))
                    );
                  },
                     child: Stack(
                                      children: [
                         Card(
                           elevation: 8,
-                          //shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
                           child:Container(
                             height: 150,
                             child: Image.asset('assets/images/Science.png',
@@ -148,7 +150,7 @@ class _HomeState extends State<Home> {
                             child:Align(
                               alignment: Alignment.center,
                               child: Column(
-                                //mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Icon(Icons.lock,size: 30,color: Colors.white,),
                                   Text("1000 points", style: TextStyle(color:Colors.white, fontWeight: FontWeight.bold,fontSize: 14),),
@@ -175,14 +177,14 @@ class _HomeState extends State<Home> {
                 child:GestureDetector(
                   onTap: (){
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context)=>const QuizIntro())
+                        MaterialPageRoute(builder: (context)=>const QuizIntro(quizType: 'HistoryQues',))
                     );
                   },
                     child:Stack(
                       children: [
                         Card(
                             elevation: 8,
-                            //shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
                             child:Container(
                                 height: 150,
                               child: Image.asset('assets/images/History.png',
@@ -224,7 +226,7 @@ class _HomeState extends State<Home> {
                             child:Align(
                               alignment: Alignment.center,
                               child: Column(
-                                //mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Icon(Icons.lock,size: 30,color: Colors.white,),
                                   Text("1000 points", style: TextStyle(color:Colors.white, fontWeight: FontWeight.bold,fontSize: 14),),
@@ -252,14 +254,14 @@ class _HomeState extends State<Home> {
                 child:GestureDetector(
                   onTap: (){
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context)=>const QuizIntro())
+                        MaterialPageRoute(builder: (context)=>const QuizIntro(quizType: 'SportsQues',))
                     );
                   },
                     child:Stack(
                       children: [
                         Card(
                             elevation: 8,
-                            //shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
                             child:Container(
                               height: 150,
                               child: Image.asset('assets/images/Geography.jpg',
@@ -301,7 +303,7 @@ class _HomeState extends State<Home> {
                             child:Align(
                               alignment: Alignment.center,
                               child: Column(
-                                //mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Icon(Icons.lock,size: 30,color: Colors.white,),
                                   Text("1000 points", style: TextStyle(color:Colors.white, fontWeight: FontWeight.bold,fontSize: 14),),
@@ -328,7 +330,7 @@ class _HomeState extends State<Home> {
                 child:GestureDetector(
                   onTap: (){
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context)=>const QuizIntro())
+                        MaterialPageRoute(builder: (context)=>const QuizIntro(quizType: 'SportsQues',))
                     );
                   },
                     child:Stack(
@@ -377,7 +379,7 @@ class _HomeState extends State<Home> {
                             child:Align(
                               alignment: Alignment.center,
                               child: Column(
-                                //mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Icon(Icons.lock,size: 30,color: Colors.white,),
                                   Text("1000 points", style: TextStyle(color:Colors.white, fontWeight: FontWeight.bold,fontSize: 14),),
@@ -404,14 +406,14 @@ class _HomeState extends State<Home> {
                 child:GestureDetector(
                   onTap: (){
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context)=>const QuizIntro())
+                        MaterialPageRoute(builder: (context)=>const QuizIntro(quizType: 'SportsQues',))
                     );
                   },
                     child:Stack(
                       children: [
                         Card(
                             elevation: 8,
-                            //shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
                             child:Container(
                               height: 150,
                               child: Image.asset( 'assets/images/Entertainment.png',
@@ -453,7 +455,7 @@ class _HomeState extends State<Home> {
                             child:Align(
                               alignment: Alignment.center,
                               child: Column(
-                                //mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Icon(Icons.lock,size: 30,color: Colors.white,),
                                   Text("1000 points", style: TextStyle(color:Colors.white, fontWeight: FontWeight.bold,fontSize: 14),),
@@ -477,6 +479,15 @@ class _HomeState extends State<Home> {
         ),
       ),
     )
+    );
+  }
+
+  void _navigateToQuizIntro(BuildContext context, String quizType) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => QuizIntro(quizType: quizType),
+      ),
     );
   }
 }

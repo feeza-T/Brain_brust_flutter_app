@@ -1,8 +1,10 @@
+import 'package:brain_brust/screen/ForgetPassword.dart';
 import 'package:flutter/material.dart';
 import 'package:brain_brust/screen/Home.dart';
 
 class login extends StatelessWidget {
   const login({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -84,14 +86,19 @@ class login extends StatelessWidget {
                  ),
                ),
                const SizedBox(height: 20,),
-       const Align(
-                 alignment: Alignment.centerRight,
-                child: Text('Forget Password?',style:TextStyle(
-                 fontSize: 20,
-                 fontWeight: FontWeight.bold,
-                 color:Colors.black,
-               )),
-               ),
+               // GestureDetector(
+               //   onTap: () {
+               //     Navigator.push(context,
+               //         MaterialPageRoute(builder: (context) => Forgot_pass()));
+               //   },
+               //   child: Align(
+               //     alignment: Alignment.centerRight,
+               //     child: Text(
+               //       "Forgot Password?",
+               //       style: TextStyle(color: Colors.red, fontSize: 15),
+               //     ),
+               //   ),
+               // ),
                const SizedBox(height: 70,),
            GestureDetector(
              onTap: (){
@@ -117,6 +124,7 @@ class login extends StatelessWidget {
                  ),))
                ),
            ),
+
                SizedBox(height: 150,),
                const Align(
                  alignment: Alignment.bottomRight,
@@ -147,5 +155,4 @@ class login extends StatelessWidget {
     );
   }
 }
-
 
