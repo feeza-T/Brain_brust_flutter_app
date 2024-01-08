@@ -6,87 +6,87 @@ import 'package:brain_brust/widgets/sidenavbar.dart';
 
 
 
-class ScienceQues extends StatelessWidget {
+class GeographyQues extends StatelessWidget {
   final List<Map<String, dynamic>> questions = [
     {
-      'question': 'What is the chemical symbol for gold?',
-      'options': ['a) Au', 'b) Ag', 'c) Gd', 'd) Gr'],
+      'question': 'What is the capital city of France?',
+      'options': ['a) London', 'b) Paris', 'c) Rome', 'd) Madrid']
     },
     {
-      'question': 'Which planet is known as the "Red Planet"?',
-      'options': ['a) Jupiter', 'b) Mars', 'c) Saturn', 'd) Venus'],
+      'question': 'Which river is the longest in Africa?',
+      'options': ['a) Nile', 'b) Amazon', 'c) Congo', 'd) Zambezi']
     },
     {
-      'question': 'What is the smallest unit of matter?',
-      'options': ['a) Atom', 'b) Molecule', 'c) Proton', 'd) Electron'],
+      'question': 'Which continent is the largest by land area?',
+      'options': ['a) Europe', 'b) South America', 'c) Africa', 'd) Asia']
     },
     {
-      'question': 'What is the Earth\'s primary source of energy?',
-      'options': ['a) Geothermal energy', 'b) Nuclear energy', 'c) Solar energy', 'd) Wind energy'],
+      'question': 'What is the largest desert in the world?',
+      'options': ['a) Sahara', 'b) Gobi', 'c) Kalahari', 'd) Atacama']
     },
     {
-      'question': 'What is the unit of measurement for electric current?',
-      'options': ['a) Ohms', 'b) Volts', 'c) Watts', 'd) Amperes'],
+      'question': 'Which country is known as the "Land of the Rising Sun"?',
+      'options': ['a) China', 'b) South Korea', 'c) Japan', 'd) Thailand']
     },
     {
-      'question': 'What force causes objects to fall towards the Earth?',
-      'options': ['a) Magnetic force', 'b) Centrifugal force', 'c) Gravitational force', 'd) Frictional force'],
+      'question': 'The Great Barrier Reef is situated in which country?',
+      'options': ['a) Indonesia', 'b) Philippines', 'c) Australia', 'd) Malaysia']
     },
     {
-      'question': 'What is the chemical symbol for sodium?',
-      'options': ['a) Sa', 'b) So', 'c) Na', 'd) No']
+      'question': 'Which city is known as the "Eternal City"?',
+      'options': ['a) Athens', 'b) Rome', 'c) Cairo', 'd) Istanbul']
     },
     {
-      'question': 'Which gas do plants absorb during photosynthesis?',
-      'options': ['a) Oxygen', 'b) Nitrogen', 'c) Carbon Dioxide', 'd) Hydrogen']
+      'question': 'Where would you find the Great Wall?',
+      'options': ['a) China', 'b) India', 'c) Russia', 'd) Brazil']
     },
     {
-      'question': 'What is the powerhouse of the cell?',
-      'options': ['a) Ribosome', 'b) Nucleus', 'c) Mitochondria', 'd) Golgi Apparatus']
+      'question': 'Which continent is the driest inhabited continent?',
+      'options': ['a) Europe', 'b) Africa', 'c) Australia', 'd) Asia']
     },
     {
-      'question': 'What is the chemical symbol for iron?',
-      'options': ['a) Ir', 'b) Fe', 'c) Io', 'd) In']
+      'question': 'What is the world\'s largest island?',
+    'options': ['a) Greenland', 'b) Iceland', 'c) Madagascar', 'd) Borneo']
     },
     {
-      'question': 'Which organ in the human body produces insulin?',
-      'options': ['a) Liver', 'b) Kidney', 'c) Pancreas', 'd) Stomach']
+      'question': 'Which river runs through Baghdad?',
+      'options': ['a) Danube', 'b) Tigris', 'c) Thames', 'd) Mississippi']
     },
     {
-      'question': 'What is the process by which plants make their food called?',
-      'options': ['a) Respiration', 'b) Transpiration', 'c) Photosynthesis', 'd) Digestion']
+      'question': 'Which country is the smallest in the world by land area?',
+      'options': ['a) Monaco', 'b) Vatican City', 'c) San Marino', 'd) Liechtenstein']
     },
     {
-      'question': 'Which scientist proposed the theory of general relativity?',
-      'options': ['a) Isaac Newton', 'b) Albert Einstein', 'c) Nikola Tesla', 'd) Galileo Galilei']
+      'question': 'What is the capital city of New Zealand?',
+      'options': ['a) Sydney', 'b) Auckland', 'c) Wellington', 'd) Melbourne']
     },
     {
-      'question': 'What is the densest planet in the solar system?',
-      'options': ['a) Earth', 'b) Jupiter', 'c) Saturn', 'd) Mercury']
+      'question': 'The city of Marrakech is located in which African country?',
+      'options': ['a) Egypt', 'b) Morocco', 'c) Algeria', 'd) Tunisia']
     },
     {
-      'question': 'Which type of electromagnetic radiation has the longest wavelength?',
-      'options': ['a) Gamma rays', 'b) X-rays', 'c) Infrared', 'd) Radio waves']
+      'question': 'Where is the tallest building in the world, the Burj Khalifa, located?',
+      'options': ['a) Dubai', 'b) Abu Dhabi', 'c) Doha', 'd) Riyadh']
     },
     {
-      'question': 'What is the unit of measurement for frequency?',
-      'options': ['a) Newton', 'b) Hertz', 'c) Pascal', 'd) Joule']
+      'question': 'Which country is the largest by area in South America?',
+      'options': ['a) Brazil', 'b) Argentina', 'c) Peru', 'd) Colombia']
     },
     {
-      'question': 'What is the chemical symbol for potassium?',
-      'options': ['a) K', 'b) Po', 'c) Pt', 'd) Py']
+      'question': 'Which country is known as the "Land of the Midnight Sun"?',
+      'options': ['a) Norway', 'b) Sweden', 'c) Iceland', 'd) Finland']
     },
     {
-      'question': 'Which gas makes up the majority of Earth\'s atmosphere?',
-      'options': ['a) Oxygen', 'b) Nitrogen', 'c) Carbon Dioxide', 'd) Hydrogen']
+      'question': 'The city of Cape Town is located in which African country?',
+      'options': ['a) Kenya', 'b) South Africa', 'c) Nigeria', 'd) Egypt']
     },
     {
-      'question': 'What type of energy is stored in a battery?',
-      'options': ['a) Mechanical energy', 'b) Chemical energy', 'c) Nuclear energy', 'd) Thermal energy']
+      'question': 'What is the world\'s longest mountain range?',
+    'options': ['a) Andes', 'b) Himalayas', 'c) Rockies', 'd) Alps']
     },
     {
-      'question': 'What is the chemical formula for water?',
-      'options': ['a) HO', 'b) CO2', 'c) H2O', 'd) HCl']
+      'question': 'Which ocean is the largest by area?',
+      'options': ['a) Indian Ocean', 'b) Arctic Ocean', 'c) Pacific Ocean', 'd) Southern Ocean']
     }
 
   ];
