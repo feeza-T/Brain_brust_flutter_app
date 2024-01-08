@@ -32,6 +32,62 @@ class HistoryQues extends StatelessWidget {
       'question': 'Which event is known as the start of World War I?',
       'options': ['a) The assassination of Archduke Franz Ferdinand', 'b) The sinking of the Lusitania', 'c) The Battle of the Somme', 'd) The Treaty of Versailles'],
     },
+    {
+      'question': 'Who was the first Emperor of Rome?',
+      'options': ['a) Julius Caesar', 'b) Augustus', 'c) Nero', 'd) Constantine']
+    },
+    {
+      'question': 'In which year did Christopher Columbus discover the Americas?',
+      'options': ['a) 1492', 'b) 1505', 'c) 1517', 'd) 1523']
+    },
+    {
+      'question': 'Who wrote the famous novel "Pride and Prejudice"?',
+      'options': ['a) Charles Dickens', 'b) Jane Austen', 'c) Leo Tolstoy', 'd) Fyodor Dostoevsky']
+    },
+    {
+      'question': 'Which US president issued the Emancipation Proclamation?',
+      'options': ['a) Abraham Lincoln', 'b) Thomas Jefferson', 'c) Andrew Jackson', 'd) Ulysses S. Grant']
+    },
+    {
+      'question': 'Which famous document guarantees certain fundamental rights and freedoms for citizens?',
+      'options': ['a) Magna Carta', 'b) Declaration of Independence', 'c) Bill of Rights', 'd) Universal Declaration of Human Rights']
+    },
+    {
+      'question': 'Who was the leader of the Soviet Union during the Cuban Missile Crisis?',
+      'options': ['a) Nikita Khrushchev', 'b) Joseph Stalin', 'c) Vladimir Lenin', 'd) Mikhail Gorbachev']
+    },
+    {
+      'question': 'Which civilization is credited with inventing the concept of writing?',
+      'options': ['a) Sumerians', 'b) Ancient Egyptians', 'c) Greeks', 'd) Chinese']
+    },
+    {
+      'question': 'Who painted the famous artwork "The Last Supper"?',
+      'options': ['a) Vincent van Gogh', 'b) Leonardo da Vinci', 'c) Michelangelo', 'd) Pablo Picasso']
+    },
+    {
+      'question': 'Which English monarch is known for having six wives?',
+      'options': ['a) King Henry VIII', 'b) King Richard III', 'c) King Edward VI', 'd) King James I']
+    },
+    {
+      'question': 'In what year did the Berlin Wall fall, symbolizing the end of the Cold War?',
+      'options': ['a) 1985', 'b) 1989', 'c) 1991', 'd) 1993']
+    },
+    {
+      'question': 'Who was the first person to step on the moon?',
+      'options': ['a) Buzz Aldrin', 'b) Neil Armstrong', 'c) Michael Collins', 'd) Alan Shepard']
+    },
+    {
+      'question': 'Which famous abolitionist escaped from slavery and became a leading anti-slavery activist?',
+      'options': ['a) Harriet Tubman', 'b) Frederick Douglass', 'c) Sojourner Truth', 'd) Booker T. Washington']
+    },
+    {
+      'question': 'Which city was the capital of the Byzantine Empire?',
+      'options': ['a) Athens', 'b) Rome', 'c) Constantinople', 'd) Alexandria']
+    },
+    {
+      'question': 'Who is known for discovering the sea route to India from Europe?',
+      'options': ['a) Ferdinand Magellan', 'b) Vasco da Gama', 'c) Christopher Columbus', 'd) Marco Polo']
+    }
 
   ];
 

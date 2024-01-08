@@ -32,6 +32,62 @@ class ScienceQues extends StatelessWidget {
       'question': 'What force causes objects to fall towards the Earth?',
       'options': ['a) Magnetic force', 'b) Centrifugal force', 'c) Gravitational force', 'd) Frictional force'],
     },
+    {
+      'question': 'What is the chemical symbol for sodium?',
+      'options': ['a) Sa', 'b) So', 'c) Na', 'd) No']
+    },
+    {
+      'question': 'Which gas do plants absorb during photosynthesis?',
+      'options': ['a) Oxygen', 'b) Nitrogen', 'c) Carbon Dioxide', 'd) Hydrogen']
+    },
+    {
+      'question': 'What is the powerhouse of the cell?',
+      'options': ['a) Ribosome', 'b) Nucleus', 'c) Mitochondria', 'd) Golgi Apparatus']
+    },
+    {
+      'question': 'What is the chemical symbol for iron?',
+      'options': ['a) Ir', 'b) Fe', 'c) Io', 'd) In']
+    },
+    {
+      'question': 'Which organ in the human body produces insulin?',
+      'options': ['a) Liver', 'b) Kidney', 'c) Pancreas', 'd) Stomach']
+    },
+    {
+      'question': 'What is the process by which plants make their food called?',
+      'options': ['a) Respiration', 'b) Transpiration', 'c) Photosynthesis', 'd) Digestion']
+    },
+    {
+      'question': 'Which scientist proposed the theory of general relativity?',
+      'options': ['a) Isaac Newton', 'b) Albert Einstein', 'c) Nikola Tesla', 'd) Galileo Galilei']
+    },
+    {
+      'question': 'What is the densest planet in the solar system?',
+      'options': ['a) Earth', 'b) Jupiter', 'c) Saturn', 'd) Mercury']
+    },
+    {
+      'question': 'Which type of electromagnetic radiation has the longest wavelength?',
+      'options': ['a) Gamma rays', 'b) X-rays', 'c) Infrared', 'd) Radio waves']
+    },
+    {
+      'question': 'What is the unit of measurement for frequency?',
+      'options': ['a) Newton', 'b) Hertz', 'c) Pascal', 'd) Joule']
+    },
+    {
+      'question': 'What is the chemical symbol for potassium?',
+      'options': ['a) K', 'b) Po', 'c) Pt', 'd) Py']
+    },
+    {
+      'question': 'Which gas makes up the majority of Earth\'s atmosphere?',
+      'options': ['a) Oxygen', 'b) Nitrogen', 'c) Carbon Dioxide', 'd) Hydrogen']
+    },
+    {
+      'question': 'What type of energy is stored in a battery?',
+      'options': ['a) Mechanical energy', 'b) Chemical energy', 'c) Nuclear energy', 'd) Thermal energy']
+    },
+    {
+      'question': 'What is the chemical formula for water?',
+      'options': ['a) HO', 'b) CO2', 'c) H2O', 'd) HCl']
+    }
 
   ];
 

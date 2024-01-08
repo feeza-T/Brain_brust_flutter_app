@@ -9,29 +9,85 @@ import 'package:brain_brust/widgets/sidenavbar.dart';
 class EntertaimentQues extends StatelessWidget {
   final List<Map<String, dynamic>> questions = [
     {
-      'question': 'Entertainment',
-      'options': ['a) Thomas Jefferson', 'b) George Washington', 'c) John Adams', 'd) James Madison'],
+      'question': 'Who played the lead role of Harry Potter in the film series based on J.K. Rowling\'s books?',
+      'options': ['a) Daniel Radcliffe', 'b) Rupert Grint', 'c) Tom Felton', 'd) Matthew Lewis'],
     },
     {
-      'question': 'Which ancient civilization built the famous Machu Picchu citadel in Peru?',
-      'options': ['a) Aztecs', 'b) Incas', 'c) Mayans', 'd) Egyptians'],
+      'question': 'Which movie won the Academy Award for Best Picture in 2020?',
+      'options': ['a) Parasite', 'b) 1917', 'c) Joker', 'd) Nomadland'],
     },
     {
-      'question': 'The French Revolution began in which year?',
-      'options': ['a) 1789', 'b) 1799', 'c) 1803', 'd) 1783'],
+      'question': 'Who is the creator of the famous animated TV series "The Simpsons"?',
+      'options': ['a) Seth MacFarlane', 'b) Matt Groening', 'c) Mike Judge', 'd) Trey Parker'],
     },
     {
-      'question': 'Who was the first female Prime Minister of the United Kingdom?',
-      'options': ['a) Margaret Thatcher', 'b) Theresa May', 'c) Angela Merkel', 'd) Indira Gandhi'],
+      'question': 'Which actor portrays Tony Stark/Iron Man in the Marvel Cinematic Universe?',
+      'options': ['a) Chris Evans', 'b) Chris Hemsworth', 'c) Robert Downey Jr.', 'd) Mark Ruffalo'],
     },
     {
-      'question': 'The Battle of Hastings in 1066 marked the conquest of England by which leader?',
-      'options': ['a) William the Conqueror', 'b) Richard the Lionheart', 'c) Harold Godwinson', 'd) Edward the Confessor'],
+      'question': 'Who directed the movie "Inception" starring Leonardo DiCaprio?',
+      'options': ['a) Christopher Nolan', 'b) Steven Spielberg', 'c) Quentin Tarantino', 'd) Martin Scorsese'],
     },
     {
-      'question': 'Which event is known as the start of World War I?',
-      'options': ['a) The assassination of Archduke Franz Ferdinand', 'b) The sinking of the Lusitania', 'c) The Battle of the Somme', 'd) The Treaty of Versailles'],
+      'question': 'Which actor played the character of Jack Dawson in the movie "Titanic"?',
+      'options': ['a) Leonardo DiCaprio', 'b) Brad Pitt', 'c) Matt Damon', 'd) Johnny Depp'],
     },
+    {
+      'question': 'Who directed the movie "The Dark Knight"?',
+      'options': ['a) Christopher Nolan', 'b) Martin Scorsese', 'c) Steven Spielberg', 'd) James Cameron']
+    },
+    {
+      'question': 'Which actress played the role of Hermione Granger in the Harry Potter film series?',
+      'options': ['a) Emma Stone', 'b) Emma Watson', 'c) Scarlett Johansson', 'd) Jennifer Lawrence']
+    },
+    {
+      'question': 'Which movie won the Academy Award for Best Picture in 2019?',
+      'options': ['a) Green Book', 'b) The Shape of Water', 'c) Moonlight', 'd) La La Land']
+    },
+    {
+      'question': 'Who created the TV series "Friends"?',
+      'options': ['a) Jerry Seinfeld', 'b) David Schwimmer', 'c) Marta Kauffman', 'd) Matthew Perry']
+    },
+    {
+      'question': 'Which actor starred as Neo in the movie "The Matrix"?',
+      'options': ['a) Keanu Reeves', 'b) Tom Cruise', 'c) Will Smith', 'd) Brad Pitt']
+    },
+    {
+      'question': 'Who composed the soundtrack for the film "Jurassic Park"?',
+      'options': ['a) Hans Zimmer', 'b) John Williams', 'c) Alan Silvestri', 'd) Ennio Morricone']
+    },
+    {
+      'question': 'Which actress won an Oscar for her role in "Silver Linings Playbook"?',
+      'options': ['a) Jennifer Lawrence', 'b) Meryl Streep', 'c) Anne Hathaway', 'd) Cate Blanchett']
+    },
+    {
+      'question': 'Who created the TV series "Breaking Bad"?',
+      'options': ['a) Vince Gilligan', 'b) David Chase', 'c) Matthew Weiner', 'd) David Simon']
+    },
+    {
+      'question': 'Which actor portrayed the character of Tony Montana in the film "Scarface"?',
+      'options': ['a) Al Pacino', 'b) Robert De Niro', 'c) Joe Pesci', 'd) Marlon Brando']
+    },
+    {
+      'question': 'Who directed the movie "Avatar"?',
+      'options': ['a) James Cameron', 'b) Peter Jackson', 'c) Ridley Scott', 'd) George Lucas']
+    },
+    {
+      'question': 'Which actor played the role of Black Panther in the Marvel Cinematic Universe?',
+      'options': ['a) Chadwick Boseman', 'b) Michael B. Jordan', 'c) Anthony Mackie', 'd) Chris Evans']
+    },
+    {
+      'question': 'Which movie won the Academy Award for Best Animated Feature in 2021?',
+      'options': ['a) Soul', 'b) Onward', 'c) Wolfwalkers', 'd) Raya and the Last Dragon']
+    },
+    {
+      'question': 'Who directed the movie "The Shawshank Redemption"?',
+      'options': ['a) Frank Darabont', 'b) Quentin Tarantino', 'c) Tim Burton', 'd) Martin Scorsese']
+    },
+    {
+      'question': 'Which actor portrayed the character of Captain Jack Sparrow in the "Pirates of the Caribbean" series?',
+      'options': ['a) Orlando Bloom', 'b) Johnny Depp', 'c) Geoffrey Rush', 'd) Keira Knightley']
+    }
 
   ];
 

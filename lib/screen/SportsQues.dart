@@ -32,6 +32,62 @@ class SportsQues extends StatelessWidget {
       'question': 'In golf, what is the term for scoring one stroke under par on a hole?',
       'options': ['a) Eagle', 'b) Birdie', 'c) Albatross', 'd) Bogey'],
     },
+    {
+      'question': 'Which country has won the most Olympic gold medals in athletics (track and field)?',
+      'options': ['a) United States', 'b) Jamaica', 'c) Kenya', 'd) Russia']
+    },
+    {
+      'question': 'In tennis, what is the term for a zero score?',
+      'options': ['a) Fault', 'b) Love', 'c) Ace', 'd) Let']
+    },
+    {
+      'question': 'Which athlete holds the world record for the men\'s 100 meters sprint?',
+      'options': ['a) Usain Bolt', 'b) Carl Lewis', 'c) Maurice Greene', 'd) Justin Gatlin']
+    },
+    {
+      'question': 'In which sport would you perform a "slam dunk"?',
+      'options': ['a) Soccer', 'b) Basketball', 'c) Ice Hockey', 'd) Volleyball']
+    },
+    {
+      'question': 'Which country hosted the first modern Olympic Games?',
+      'options': ['a) United States', 'b) Greece', 'c) France', 'd) Germany']
+    },
+    {
+      'question': 'Who holds the record for the most Formula 1 World Championships?',
+      'options': ['a) Michael Schumacher', 'b) Lewis Hamilton', 'c) Ayrton Senna', 'd) Sebastian Vettel']
+    },
+    {
+      'question': 'In which sport is the Davis Cup awarded?',
+      'options': ['a) Tennis', 'b) Golf', 'c) Cricket', 'd) Rugby']
+    },
+    {
+      'question': 'Which team has won the most NBA championships?',
+      'options': ['a) Los Angeles Lakers', 'b) Boston Celtics', 'c) Chicago Bulls', 'd) Golden State Warriors']
+    },
+    {
+      'question': 'In soccer, how many players are there on the field for each team during a match?',
+      'options': ['a) 8', 'b) 10', 'c) 11', 'd) 12']
+    },
+    {
+      'question': 'Who is the youngest player to win a Grand Slam singles title in tennis?',
+      'options': ['a) Martina Hingis', 'b) Maria Sharapova', 'c) Monica Seles', 'd) Serena Williams']
+    },
+    {
+      'question': 'Which sport is associated with the Ryder Cup?',
+      'options': ['a) Tennis', 'b) Golf', 'c) Cricket', 'd) Badminton']
+    },
+    {
+      'question': 'Which country won the most medals in the 2020 Summer Olympics?',
+      'options': ['a) Japan', 'b) United States', 'c) China', 'd) Russia']
+    },
+    {
+      'question': 'Who holds the record for the most goals scored in a single NHL season?',
+      'options': ['a) Wayne Gretzky', 'b) Mario Lemieux', 'c) Alexander Ovechkin', 'd) Bobby Orr']
+    },
+    {
+      'question': 'Which team won the first ever FIFA Women\'s World Cup in soccer?',
+      'options': ['a) United States', 'b) Norway', 'c) Germany', 'd) Japan']
+    }
 
   ];
 
