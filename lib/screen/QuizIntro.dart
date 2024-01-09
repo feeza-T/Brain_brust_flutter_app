@@ -1,11 +1,12 @@
-import 'package:brain_brust/screen/EntertainmentQues.dart';
+// ignore_for_file: file_names
+
+import 'package:brain_brust/screen/EntertainmentQues.dart'; // Corrected import statement
 import 'package:brain_brust/screen/GeographyQues.dart';
-import 'package:brain_brust/screen/ScienceQues.dart';
+import 'package:brain_brust/screen/HistoryQues.dart'; // Added missing import statement
+import 'package:brain_brust/screen/ScienceQues.dart'; // Corrected import statement
+import 'package:brain_brust/screen/SportsQues.dart'; // Added missing import statement
 import 'package:flutter/material.dart';
 import 'package:brain_brust/widgets/sidenavbar.dart';
-
-import 'HistoryQues.dart';
-import 'SportsQues.dart';
 
 class QuizIntro extends StatelessWidget {
   final String quizType;

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:brain_brust/widgets/lifelines_sideBar.dart';
-import 'package:brain_brust/screen/ScienceQues.dart';
-import 'package:flutter/material.dart';
-import 'package:brain_brust/widgets/sidenavbar.dart';
+class EntertaimentQues extends StatefulWidget {
+  @override
+  _EntertaimentQuesState createState() => _EntertaimentQuesState();
+}
 
+class _EntertaimentQuesState extends State<EntertaimentQues>{
 
-
-class EntertaimentQues extends StatelessWidget {
+  int currentQuestionIndex=0;
   final List<Map<String, dynamic>> questions = [
     {
       'question': 'Who played the lead role of Harry Potter in the film series based on J.K. Rowling\'s books?',
@@ -88,87 +88,132 @@ class EntertaimentQues extends StatelessWidget {
       'question': 'Which actor portrayed the character of Captain Jack Sparrow in the "Pirates of the Caribbean" series?',
       'options': ['a) Orlando Bloom', 'b) Johnny Depp', 'c) Geoffrey Rush', 'd) Keira Knightley']
     }
-
   ];
 
+  Future<void> _showQuitConfirmationDialog(BuildContext context) async {
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Quit Game'),
+          content: Text('Are you sure to quit the game?'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog
+              },
+              child: Text('No'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog
+                Navigator.pop(context); // Go back to the previous screen (QuizIntro)
+              },
+              child: Text('Yes'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+
+  void _showNextQuestion() {
+    if (currentQuestionIndex < questions.length - 1) {
+      setState((){
+      currentQuestionIndex++;
+
+    } );
+    }
+    else {
+      // Handle end of questions (e.g., show a message or navigate to a result screen)
+    }
+    }
+
+    // Navigate to the next question with the updated index
+   
   @override
   Widget build(BuildContext context) {
+    final questionData = questions[currentQuestionIndex];
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xff2A1639),
         foregroundColor: Colors.white,
         title: Text('10 points', style: TextStyle(fontSize: 20)),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.close),
+            onPressed: () {
+              _showQuitConfirmationDialog(context);
+            },
+          ),
+        ],
       ),
-      body: ListView.builder(
-        itemCount: questions.length,
-        itemBuilder: (context, index) {
-          final questionData = questions[index];
-          return Padding(
-            padding: const EdgeInsets.only(bottom: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: 100,
-                  width: 100,
-                  child: Stack(
-                    fit: StackFit.expand,
-                    children: [
-                      CircularProgressIndicator(
-                        strokeWidth: 12,
-                        backgroundColor: Colors.green,
+      body: Padding(
+        padding: const EdgeInsets.only(bottom: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: 100,
+              width: 100,
+              child: Stack(
+                fit: StackFit.expand,
+                children: [
+                  CircularProgressIndicator(
+                    strokeWidth: 12,
+                    backgroundColor: Colors.green,
+                  ),
+                  Center(
+                    child: Text(
+                      '30',
+                      style: TextStyle(
+                        fontSize: 45,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
                       ),
-                      Center(
-                        child: Text(
-                          '30',
-                          style: TextStyle(
-                            fontSize: 45,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                SizedBox(height: 20),
-                Container(
-                  padding: EdgeInsets.all(14),
-                  decoration: BoxDecoration(
-                    color: Colors.deepPurple,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Text(
-                    questionData['question'],
-                    style: TextStyle(fontSize: 22, color: Colors.white),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                SizedBox(height: 10),
-                Column(
-                  children: (questionData['options'] as List<String>).map((option) {
-                    return Container(
-                      width: MediaQuery.of(context).size.width,
-                      padding: EdgeInsets.all(14),
-                      margin: EdgeInsets.symmetric(horizontal: 17, vertical: 5),
-                      decoration: BoxDecoration(
-                        color: Colors.grey.withOpacity(0.4),
-                        borderRadius: BorderRadius.circular(35),
-                      ),
-                      child: Text(option, style: TextStyle(fontSize: 25), textAlign: TextAlign.center,),
-                    );
-                  }).toList(),
-                ),
-              ],
+                    ),
+                  )
+                ],
+              ),
             ),
-          );
-        },
+            SizedBox(height: 20),
+            Container(
+              padding: EdgeInsets.all(14),
+              decoration: BoxDecoration(
+                color: Colors.deepPurple,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Text(
+                questionData['question'],
+                style: TextStyle(fontSize: 22, color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            SizedBox(height: 10),
+            Column(
+              children: (questionData['options'] as List<String>).map((option) {
+                return Container(
+                  width: MediaQuery.of(context).size.width,
+                  padding: EdgeInsets.all(14),
+                  margin: EdgeInsets.symmetric(horizontal: 17, vertical: 5),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.withOpacity(0.4),
+                    borderRadius: BorderRadius.circular(35),
+                  ),
+                  child: Text(option, style: TextStyle(fontSize: 25), textAlign: TextAlign.center,),
+                );
+              }).toList(),
+            ),
+          ],
+        ),
       ),
       floatingActionButton: ElevatedButton(
-        child: Text('QUIT GAME', style: TextStyle(fontSize: 20)),
+        child: Text('NEXT QUESTION', style: TextStyle(fontSize: 20)),
         onPressed: () {
-          Navigator.pop(context); // Go back to the previous screen (QuizIntro)
+          _showNextQuestion();
         },
       ),
     );

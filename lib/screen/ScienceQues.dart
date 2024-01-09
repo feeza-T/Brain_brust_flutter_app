@@ -4,9 +4,14 @@ import 'package:brain_brust/screen/ScienceQues.dart';
 import 'package:flutter/material.dart';
 import 'package:brain_brust/widgets/sidenavbar.dart';
 
+class ScienceQues extends StatefulWidget {
+  @override
+  _ScienceQuesState createState() => _ScienceQuesState();
+}
 
+class _ScienceQuesState extends State<ScienceQues> {
+  int currentQuestionIndex = 0;
 
-class ScienceQues extends StatelessWidget {
   final List<Map<String, dynamic>> questions = [
     {
       'question': 'What is the chemical symbol for gold?',
@@ -88,23 +93,63 @@ class ScienceQues extends StatelessWidget {
       'question': 'What is the chemical formula for water?',
       'options': ['a) HO', 'b) CO2', 'c) H2O', 'd) HCl']
     }
-
   ];
+
+  void goToNextQuestion() {
+    setState(() {
+      currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
+    });
+  }
+
+  Future<void> _showQuitConfirmationDialog(BuildContext context) async {
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Quit Game'),
+          content: Text('Are you sure to quit the game?'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog
+              },
+              child: Text('No'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog
+                Navigator.pop(context); // Go back to the previous screen (QuizIntro)
+              },
+              child: Text('Yes'),
+            ),
+          ],
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
+    final questionData = questions[currentQuestionIndex];
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xff2A1639),
         foregroundColor: Colors.white,
         title: Text('10 points', style: TextStyle(fontSize: 20)),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.close),
+            onPressed: () {
+              _showQuitConfirmationDialog(context);
+            },
+          ),
+        ],
       ),
-      body: ListView.builder(
-        itemCount: questions.length,
-        itemBuilder: (context, index) {
-          final questionData = questions[index];
-          return Padding(
+      body: ListView(
+        children: [
+          Padding(
             padding: const EdgeInsets.only(bottom: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -162,15 +207,21 @@ class ScienceQues extends StatelessWidget {
                 ),
               ],
             ),
-          );
-        },
+          ),
+        ],
       ),
       floatingActionButton: ElevatedButton(
-        child: Text('QUIT GAME', style: TextStyle(fontSize: 20)),
+        child: Text('Next Question', style: TextStyle(fontSize: 20)),
         onPressed: () {
-          Navigator.pop(context); // Go back to the previous screen (QuizIntro)
+          goToNextQuestion();
         },
       ),
     );
   }
+}
+
+void main() {
+  runApp(MaterialApp(
+    home: ScienceQues(),
+  ));
 }
