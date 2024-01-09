@@ -6,7 +6,7 @@ class AdvanceSportsQues extends StatefulWidget {
   _SportsQuesState createState() => _SportsQuesState();
 }
 
-class _SportsQuesState extends State<SportsQues> {
+class _SportsQuesState extends State<AdvanceSportsQues> {
   int currentQuestionIndex = 0;
 
   final List<Map<String, dynamic>> questions = [
@@ -125,7 +125,7 @@ class _SportsQuesState extends State<SportsQues> {
         currentQuestionIndex++;
       });
     } else {
-      // Handle end of questions (e.g., show a message or navigate to a result screen)
+     
     }
   }
 
