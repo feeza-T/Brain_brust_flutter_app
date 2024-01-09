@@ -1,97 +1,96 @@
 import 'package:flutter/material.dart';
 import 'package:brain_brust/widgets/lifelines_sideBar.dart';
 import 'package:brain_brust/screen/ScienceQues.dart';
-import 'package:flutter/material.dart';
 import 'package:brain_brust/widgets/sidenavbar.dart';
 
-class ScienceQues extends StatefulWidget {
+class Advance_ScienceQues extends StatefulWidget {
   @override
-  _ScienceQuesState createState() => _ScienceQuesState();
+  Advance_ScienceQuesState createState() => Advance_ScienceQuesState();
 }
 
-class _ScienceQuesState extends State<ScienceQues> {
+class Advance_ScienceQuesState extends State<Advance_ScienceQues> {
   int currentQuestionIndex = 0;
 
   final List<Map<String, dynamic>> questions = [
     {
-      'question': 'What is the chemical symbol for gold?',
-      'options': ['a) Au', 'b) Ag', 'c) Gd', 'd) Gr'],
+      'question': 'Which particle is associated with the weak nuclear force?',
+      'options': ['a) Quark', 'b) Lepton', 'c) Photon', 'd) Gluon'],
     },
     {
-      'question': 'Which planet is known as the "Red Planet"?',
-      'options': ['a) Jupiter', 'b) Mars', 'c) Saturn', 'd) Venus'],
+      'question': 'What phenomenon describes the bending of light around an obstacle?',
+      'options': ['a) Diffraction', 'b) Reflection', 'c) Refraction', 'd) Dispersion'],
     },
     {
-      'question': 'What is the smallest unit of matter?',
-      'options': ['a) Atom', 'b) Molecule', 'c) Proton', 'd) Electron'],
+      'question': 'Which of the following elements has the highest electronegativity?',
+      'options': ['a) Fluorine', 'b) Oxygen', 'c) Carbon', 'd) Nitrogen'],
     },
     {
-      'question': 'What is the Earth\'s primary source of energy?',
-      'options': ['a) Geothermal energy', 'b) Nuclear energy', 'c) Solar energy', 'd) Wind energy'],
+      'question': 'What is the Heisenberg Uncertainty Principle related to?',
+      'options': ['a) Momentum and position', 'b) Energy and time', 'c) Speed and time', 'd) Mass and velocity'],
     },
     {
-      'question': 'What is the unit of measurement for electric current?',
-      'options': ['a) Ohms', 'b) Volts', 'c) Watts', 'd) Amperes'],
+      'question': 'Which subatomic particle is exchanged to create an electric force?',
+      'options': ['a) Proton', 'b) Neutron', 'c) Electron', 'd) Positron'],
     },
     {
-      'question': 'What force causes objects to fall towards the Earth?',
-      'options': ['a) Magnetic force', 'b) Centrifugal force', 'c) Gravitational force', 'd) Frictional force'],
+      'question': 'What type of bond is formed between two non-metals sharing electrons?',
+      'options': ['a) Ionic bond', 'b) Metallic bond', 'c) Covalent bond', 'd) Hydrogen bond'],
     },
     {
-      'question': 'What is the chemical symbol for sodium?',
-      'options': ['a) Sa', 'b) So', 'c) Na', 'd) No']
+      'question': 'Which of the following is NOT a fundamental force in nature?',
+      'options': ['a) Strong nuclear force', 'b) Weak nuclear force', 'c) Electromagnetic force', 'd) Frictional force'],
     },
     {
-      'question': 'Which gas do plants absorb during photosynthesis?',
-      'options': ['a) Oxygen', 'b) Nitrogen', 'c) Carbon Dioxide', 'd) Hydrogen']
+      'question': 'What is the phenomenon where light waves oscillate in more than one plane?',
+      'options': ['a) Polarization', 'b) Diffraction', 'c) Interference', 'd) Dispersion'],
     },
     {
-      'question': 'What is the powerhouse of the cell?',
-      'options': ['a) Ribosome', 'b) Nucleus', 'c) Mitochondria', 'd) Golgi Apparatus']
+      'question': 'Which equation describes the conservation of energy?',
+      'options': ['a) E = mc^2', 'b) F = ma', 'c) P = mv', 'd) F = d(mv)/dt'],
     },
     {
-      'question': 'What is the chemical symbol for iron?',
-      'options': ['a) Ir', 'b) Fe', 'c) Io', 'd) In']
+      'question': 'What is the term for the study of the distribution and motion of celestial objects?',
+      'options': ['a) Cosmology', 'b) Astrology', 'c) Astronomy', 'd) Meteorology'],
     },
     {
-      'question': 'Which organ in the human body produces insulin?',
-      'options': ['a) Liver', 'b) Kidney', 'c) Pancreas', 'd) Stomach']
+      'question': 'Which type of radiation is primarily responsible for the greenhouse effect?',
+      'options': ['a) Ultraviolet radiation', 'b) Infrared radiation', 'c) Visible light', 'd) Gamma radiation'],
     },
     {
-      'question': 'What is the process by which plants make their food called?',
-      'options': ['a) Respiration', 'b) Transpiration', 'c) Photosynthesis', 'd) Digestion']
+      'question': 'What is the principle behind MRI (Magnetic Resonance Imaging)?',
+      'options': ['a) Nuclear fusion', 'b) Quantum entanglement', 'c) Magnetic resonance', 'd) Electromagnetic induction'],
     },
     {
-      'question': 'Which scientist proposed the theory of general relativity?',
-      'options': ['a) Isaac Newton', 'b) Albert Einstein', 'c) Nikola Tesla', 'd) Galileo Galilei']
+      'question': 'Which of the following particles is its own antiparticle?',
+      'options': ['a) Neutrino', 'b) Photon', 'c) Electron', 'd) Proton'],
     },
     {
-      'question': 'What is the densest planet in the solar system?',
-      'options': ['a) Earth', 'b) Jupiter', 'c) Saturn', 'd) Mercury']
+      'question': 'What does the Pauli Exclusion Principle state?',
+      'options': ['a) Two electrons in an atom cannot have the same set of quantum numbers.', 'b) Energy levels of an atom are quantized.', 'c) Electrons move in elliptical orbits.', 'd) All atoms strive to achieve a full valence shell.'],
     },
     {
-      'question': 'Which type of electromagnetic radiation has the longest wavelength?',
-      'options': ['a) Gamma rays', 'b) X-rays', 'c) Infrared', 'd) Radio waves']
+      'question': 'In thermodynamics, what does the second law state about entropy?',
+      'options': ['a) It remains constant.', 'b) It decreases over time.', 'c) It increases over time.', 'd) It oscillates randomly.'],
     },
     {
-      'question': 'What is the unit of measurement for frequency?',
-      'options': ['a) Newton', 'b) Hertz', 'c) Pascal', 'd) Joule']
+      'question': 'Which of the following particles has a fractional electric charge?',
+      'options': ['a) Proton', 'b) Electron', 'c) Quark', 'd) Neutrino'],
     },
     {
-      'question': 'What is the chemical symbol for potassium?',
-      'options': ['a) K', 'b) Po', 'c) Pt', 'd) Py']
+      'question': 'What phenomenon explains the behavior of particles like electrons as both waves and particles?',
+      'options': ['a) Dual nature of matter', 'b) Quantum entanglement', 'c) Superposition principle', 'd) Wave-particle duality'],
     },
     {
-      'question': 'Which gas makes up the majority of Earth\'s atmosphere?',
-      'options': ['a) Oxygen', 'b) Nitrogen', 'c) Carbon Dioxide', 'd) Hydrogen']
+      'question': 'In the context of nuclear reactions, what does the term "half-life" represent?',
+      'options': ['a) Time taken for half the sample to decay', 'b) Time taken for the entire sample to decay', 'c) Time taken for fusion', 'd) Time taken for fission'],
     },
     {
-      'question': 'What type of energy is stored in a battery?',
-      'options': ['a) Mechanical energy', 'b) Chemical energy', 'c) Nuclear energy', 'd) Thermal energy']
+      'question': 'Which law of thermodynamics states that energy cannot be created or destroyed, only transformed?',
+      'options': ['a) Zeroth law', 'b) First law', 'c) Second law', 'd) Third law'],
     },
     {
-      'question': 'What is the chemical formula for water?',
-      'options': ['a) HO', 'b) CO2', 'c) H2O', 'd) HCl']
+      'question': 'What is the concept in quantum mechanics where particles become interconnected and the state of one particle instantly affects the state of another, regardless of distance?',
+      'options': ['a) Superposition', 'b) Quantum tunneling', 'c) Quantum entanglement', 'd) Quantum fluctuation'],
     }
   ];
 
