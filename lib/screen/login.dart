@@ -1,6 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:brain_brust/screen/Home.dart';
-import 'package:brain_brust/user_auth/firebase_auth_implementation/firebase_auth_services.dart';
+//import 'package:brain_brust/user_auth/firebase_auth_implementation/firebase_auth_services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class Login extends StatefulWidget {
@@ -12,6 +13,7 @@ class Login extends StatefulWidget {
 
 class _LoginScreenState extends State<Login> {
   final FirebaseAuthService _auth = FirebaseAuthService();
+  final FirebaseFirestore _firestore=FirebaseFirestore.instance;
 
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
@@ -147,12 +149,21 @@ class _LoginScreenState extends State<Login> {
     try {
      
       await _auth.signInWithEmailAndPassword(email, password);
+// Get the current user
+          User? user = _auth.currentUser;
 
+          // Check if the user is not null
+          if (user != null) {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Home()));
+           
+          }
      
-      Navigator.push(context, MaterialPageRoute(builder: (context) => const Home()));
+
     } catch (e) {
       
       print("Error during sign-in: $e");
+      print(e.toString());
+  throw e;
      
     }
   }
@@ -160,6 +171,8 @@ class _LoginScreenState extends State<Login> {
 
 class FirebaseAuthService {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+  // Getter to access current user
+  User? get currentUser => _firebaseAuth.currentUser;
 
   Future<void> signInWithEmailAndPassword(String email, String password) async {
     try {
@@ -170,7 +183,8 @@ class FirebaseAuthService {
     } catch (e) {
      
       print("Error during sign-in: $e");
-      throw e; 
+      print(e.toString());
+  throw e;
     }
   }
 }

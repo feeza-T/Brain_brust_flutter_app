@@ -1,6 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:brain_brust/screen/Home.dart';
-import 'package:brain_brust/user_auth/firebase_auth_implementation/firebase_auth_services.dart';
+//import 'package:brain_brust/user_auth/firebase_auth_implementation/firebase_auth_services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class regScreen extends StatefulWidget {
@@ -12,6 +13,7 @@ class regScreen extends StatefulWidget {
 
 class _regScreenState extends State<regScreen> {
   final FirebaseAuthService _auth = FirebaseAuthService();
+   final FirebaseFirestore _firestore=FirebaseFirestore.instance;
 
   TextEditingController _usernameController = TextEditingController();
   TextEditingController _emailController = TextEditingController();
@@ -172,6 +174,19 @@ class _regScreenState extends State<regScreen> {
     String password = _passwordController.text;
 
     try {
+
+      User? user = _auth.currentUser;
+
+          // Check if the user is not null
+          if (user != null) {
+            // Create a document in the "users" collection with the user's UID
+            await _firestore.collection('users').doc(user.uid).set({
+              'name' : username,
+              'email': user.email,
+              'status':"Unavailable",
+              // Add other user details as needed
+            });
+          }
      
       await _auth.signUpWithEmailAndPassword(email, password);
 
@@ -180,6 +195,8 @@ class _regScreenState extends State<regScreen> {
     } catch (e) {
    
       print("Error during signup: $e");
+      print(e.toString());
+  throw e;
      
     }
   }
@@ -187,7 +204,7 @@ class _regScreenState extends State<regScreen> {
 
 class FirebaseAuthService {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-
+ User? get currentUser => _firebaseAuth.currentUser;
   Future<void> signUpWithEmailAndPassword(String email, String password) async {
     try {
       await _firebaseAuth.createUserWithEmailAndPassword(
@@ -197,7 +214,8 @@ class FirebaseAuthService {
     } catch (e) {
      
       print("Error during signup: $e");
-      throw e; 
+      print(e.toString());
+  throw e;
     }
   }
 }

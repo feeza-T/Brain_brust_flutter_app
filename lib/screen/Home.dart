@@ -3,6 +3,7 @@ import 'package:brain_brust/widgets/sidenavbar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:brain_brust/screen/ChatScreen.dart';
 
 import 'ScienceQues.dart';
 
@@ -31,8 +32,19 @@ class _HomeState extends State<Home> {
         title: Text(
           'Quiz Categories',
         ),
-        backgroundColor: Color(0xff2A1639),
+        backgroundColor: Color.fromARGB(255, 64, 29, 90),
         foregroundColor: Colors.white,
+         actions: [
+          // Add the chat option here
+          IconButton(
+            onPressed: () {
+              // Add your chat functionality here
+              // For example, navigate to a chat screen
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ChatScreen()));
+            },
+            icon: Icon(Icons.chat),
+          ),
+        ],
       ),
       drawer: SideNav(),
       body: SingleChildScrollView(
