@@ -179,6 +179,10 @@ class _regScreenState extends State<regScreen> {
 
           // Check if the user is not null
           if (user != null) {
+         await user.updateDisplayName(username);
+
+
+
             // Create a document in the "users" collection with the user's UID
             await _firestore.collection('users').doc(user.uid).set({
               'name' : username,

@@ -15,7 +15,7 @@ class WelcomeScreen extends StatelessWidget {
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color(0xffB81736),
+              Color.fromARGB(255, 182, 35, 64),
               Color(0xff2A1639),
             ],
           ),
@@ -27,17 +27,17 @@ class WelcomeScreen extends StatelessWidget {
               child: Image(image: AssetImage('assets/images/logoo.png')),
             ),
             const SizedBox(
-              height: 30,
-            ),
-            const Text(
-              'Welcome \n to BRAIN BRUST Quiz App',
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
+                height: 30,
               ),
-              textAlign: TextAlign.center,
-            ),
+              const Text(
+                'Welcome \n to BRAIN BRUST Quiz App',
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
+              ),
             const SizedBox(height: 30),
             GestureDetector(
               onTap: () {

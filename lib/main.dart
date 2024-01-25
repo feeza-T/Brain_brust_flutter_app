@@ -1,3 +1,4 @@
+import 'package:brain_brust/screen/FirstScreen.dart';
 import 'package:brain_brust/screen/WelcomeScreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -7,6 +8,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 void main() async {
+
   WidgetsFlutterBinding.ensureInitialized();
   Platform.isAndroid
       ? await Firebase.initializeApp(
@@ -29,7 +31,7 @@ void main() async {
         useMaterial3: true,
        // primarySwatch: Colors.deepPurple,
       ),
-      home: const WelcomeScreen(),
+      home: const FirstScreen(),
     ),
     );
   }
