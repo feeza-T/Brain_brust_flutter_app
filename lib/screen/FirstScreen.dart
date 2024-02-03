@@ -33,7 +33,7 @@ class _FirstScreenState extends State<FirstScreen> {
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Color.fromARGB(255, 142, 64, 179),
+                  Color.fromARGB(255, 124, 53, 88),
                   Color(0xff2A1639),
                 ],
               ),
