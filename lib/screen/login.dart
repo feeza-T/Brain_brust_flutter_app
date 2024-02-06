@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:brain_brust/screen/Home.dart';
-//import 'package:brain_brust/user_auth/firebase_auth_implementation/firebase_auth_services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class Login extends StatefulWidget {
@@ -13,7 +12,6 @@ class Login extends StatefulWidget {
 
 class _LoginScreenState extends State<Login> {
   final FirebaseAuthService _auth = FirebaseAuthService();
-  final FirebaseFirestore _firestore=FirebaseFirestore.instance;
 
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
@@ -132,6 +130,27 @@ class _LoginScreenState extends State<Login> {
                         ),
                       ),
                     ),
+                    const SizedBox(height: 10),
+                    GestureDetector(
+                      onTap: _forgotPassword,
+                      child: Container(
+                        height: 40,
+                        width: 300,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.transparent),
+                        ),
+                        child: const Center(
+                          child: Text(
+                            'Forget password?',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: Color(0xffB81736),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -147,31 +166,34 @@ class _LoginScreenState extends State<Login> {
     String password = _passwordController.text;
 
     try {
-     
       await _auth.signInWithEmailAndPassword(email, password);
-// Get the current user
-          User? user = _auth.currentUser;
+      User? user = _auth.currentUser;
 
-          // Check if the user is not null
-          if (user != null) {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Home()));
-           
-          }
-     
-
+      if (user != null) {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => const Home()));
+      }
     } catch (e) {
-      
       print("Error during sign-in: $e");
-      print(e.toString());
-  throw e;
-     
+      throw e;
+    }
+  }
+
+  void _forgotPassword() async {
+    String email = _emailController.text;
+
+    try {
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+      
+    } catch (e) {
+      print("Error during forgot password: $e");
+      throw e;
     }
   }
 }
 
 class FirebaseAuthService {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-  // Getter to access current user
+
   User? get currentUser => _firebaseAuth.currentUser;
 
   Future<void> signInWithEmailAndPassword(String email, String password) async {
@@ -181,10 +203,8 @@ class FirebaseAuthService {
         password: password,
       );
     } catch (e) {
-     
       print("Error during sign-in: $e");
-      print(e.toString());
-  throw e;
+      throw e;
     }
   }
 }

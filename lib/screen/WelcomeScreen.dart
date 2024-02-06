@@ -2,12 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:brain_brust/screen/login.dart';
 import 'package:brain_brust/screen/regScreen.dart';
 import 'package:brain_brust/screen/Home.dart';
+import 'package:brain_brust/screen/FirstScreen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // Get the MediaQuery to access the screen dimensions
+    MediaQueryData mq = MediaQuery.of(context);
+    Size size = mq.size;
+
     return Scaffold(
       body: Container(
         height: double.infinity,
@@ -23,21 +28,21 @@ class WelcomeScreen extends StatelessWidget {
         child: Column(
           children: [
             const Padding(
-              padding: EdgeInsets.only(top: 40.0),
+              padding: EdgeInsets.only(top: 20.0),
               child: Image(image: AssetImage('assets/images/logoo.png')),
             ),
             const SizedBox(
-                height: 30,
+              height: 5,
+            ),
+            const Text(
+              'Welcome \n to BRAIN BRUST Quiz App',
+              style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
               ),
-              const Text(
-                'Welcome \n to BRAIN BRUST Quiz App',
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-                textAlign: TextAlign.center,
-              ),
+              textAlign: TextAlign.center,
+            ),
             const SizedBox(height: 30),
             GestureDetector(
               onTap: () {
@@ -93,16 +98,27 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const Spacer(),
-            const Text(
-              'Login with Social Media',
-              style: TextStyle(
-                fontSize: 17,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-         
+            SizedBox(height: 12,),
+         ElevatedButton(
+  onPressed: (){},
+  style: ElevatedButton.styleFrom(
+    primary: Colors.transparent, // Set background color to transparent
+    onPrimary: Colors.white, // Set text color to white
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(30),
+     // side: BorderSide(color: Colors.white), // Set border color to white
+    ),
+  ),
+  child: Text(
+    'Sign In With Google',
+    style: TextStyle(
+      fontSize: 15,
+     // fontWeight: FontWeight.bold,
+      color: Colors.white,
+    ),
+  ),
+),
+
           ],
         ),
       ),
