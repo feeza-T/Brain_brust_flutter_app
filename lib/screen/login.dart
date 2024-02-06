@@ -22,7 +22,7 @@ class login extends StatelessWidget {
           ),
         ),
       body: Stack(
-        children:[
+       /* children:[
         Container(
         height: double.infinity,
         width: double.infinity,
@@ -87,19 +87,7 @@ class login extends StatelessWidget {
                  ),
                ),
                const SizedBox(height: 20,),
-               // GestureDetector(
-               //   onTap: () {
-               //     Navigator.push(context,
-               //         MaterialPageRoute(builder: (context) => Forgot_pass()));
-               //   },
-               //   child: Align(
-               //     alignment: Alignment.centerRight,
-               //     child: Text(
-               //       "Forgot Password?",
-               //       style: TextStyle(color: Colors.red, fontSize: 15),
-               //     ),
-               //   ),
-               // ),
+
                const SizedBox(height: 70,),
            GestureDetector(
              onTap: (){
@@ -153,7 +141,7 @@ class login extends StatelessWidget {
        )
       ]
       )
-=======
+======= */
           Padding(
             padding: const EdgeInsets.only(top: 200),
             child: Container(
@@ -211,21 +199,7 @@ class login extends StatelessWidget {
                             ],
                           ),
                         ),
-                       /* GestureDetector(
-                          onTap: () {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) => Forgot_pass()));
-                          },
-                          child: Align(
-                            alignment: Alignment.centerRight,
-                            child: Text(
-                              "Forgot Password?",
-                              style: TextStyle(color: Colors.red, fontSize: 15),
-                            ),
-                          ),
-                        ),
 
-                        */
                         child: const Center(
                           child: Text(
                             'SIGN IN',
@@ -245,7 +219,7 @@ class login extends StatelessWidget {
           ),
         ],
       ),
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
     );
   }
 }

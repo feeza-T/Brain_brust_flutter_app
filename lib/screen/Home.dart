@@ -1,3 +1,4 @@
+import 'package:brain_brust/screen/Option_card.dart';
 import 'package:brain_brust/screen/QuizIntro.dart';
 import 'package:brain_brust/widgets/sidenavbar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -23,6 +24,26 @@ class _HomeState extends State<Home> {
   ];
 
   int _currentIndex = 0;
+  bool isPressed=false;
+
+  void nextQuestion(){
+    //creating a function for changing color
+
+    if(index==_questions.length-1){
+      return;
+    }else{
+      setState(() {
+        index++;
+        isPressed=false;
+      });
+    }
+
+  }
+  void changeColor(){
+    setState(() {
+      isPressed= true;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,6 +97,19 @@ class _HomeState extends State<Home> {
                 },
               ),
             ),
+            const Divider(color: neutral),
+            //add some space
+            const SizedBox(height: 25.0),
+            for(int i=0 ; i<_questions[index].options.length ; i++)
+              OptionCard(
+                option: _questions[index].options.keys.toList()[i],
+                color: isPressed
+                    ? _questions[index].options.values.toList()[i]==true
+                        ? correct
+                        : incorrect
+                    :neutral,
+                onTap: changeColor,
+              )
             SizedBox(height: 10),
             DotsIndicator(
               dotsCount: assets.length,
