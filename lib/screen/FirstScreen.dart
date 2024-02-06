@@ -1,5 +1,6 @@
 import 'package:brain_brust/screen/WelcomeScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 late Size mq;
 
@@ -14,7 +15,12 @@ class _FirstScreenState extends State<FirstScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(milliseconds: 5000), () {
+    Future.delayed(const Duration(seconds: 4), () {
+
+      SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+      SystemChrome.setSystemUIOverlayStyle(
+        const SystemUiOverlayStyle(systemNavigationBarColor: Colors.white) );
+        
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (_) => const WelcomeScreen()),

@@ -1,9 +1,17 @@
+import 'dart:convert';
 import 'dart:io';
+import 'dart:math';
 
+import 'package:brain_brust/helper/dialogs.dart';
 import 'package:brain_brust/models/chat_user.dart';
+import 'package:brain_brust/screen/ChatRoom.dart';
+import 'package:brain_brust/screen/WelcomeScreen.dart';
 import 'package:brain_brust/user_auth/firebase_auth_implementation/firebase_auth_services.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:brain_brust/screen/FirstScreen.dart';
 import 'package:image_picker/image_picker.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -34,7 +42,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
           backgroundColor: Color.fromARGB(255, 64, 29, 90),
           foregroundColor: Colors.white,
           onPressed: () {
+            Dialogs.showProgressBar(context);
             Navigator.pop(context);
+            Navigator.pushReplacement(
+                context, MaterialPageRoute(builder: (_) => WelcomeScreen()));
           },
           icon: const Icon(Icons.logout),
           label: Text('LogOut'),
@@ -64,7 +75,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               errorWidget: (context, url, error) =>
                                   CircleAvatar(
                                     child: Icon(Icons.person,
-                                        color: Color.fromARGB(255, 64, 29, 90)),
+                                        color:   Color.fromARGB(255, 64, 29, 90)),
                                     backgroundColor: Color.fromARGB(255, 134, 114, 161),
                                   ),
                             ),
@@ -118,8 +129,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   style: ElevatedButton.styleFrom(
                     shape: const StadiumBorder(),
                     backgroundColor: const Color.fromARGB(255, 45, 13, 51),
-                    minimumSize:
-                        Size(mq.size.width * .5, mq.size.height * .06),
+                    minimumSize: Size(mq.size.width * .5, mq.size.height * .06),
                   ),
                   onPressed: () {},
                   icon: const Icon(Icons.edit, color: Colors.white, size: 28),
@@ -171,11 +181,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         final XFile? image = await picker.pickImage(
                             source: ImageSource.gallery);
                         if (image != null) {
+                          print(
+                              'Image Path: ${image.path} -- MimeType : ${image.mimeType}');
                           setState(() {
                             _image = image.path;
                           });
 
-                          FirebaseAuthService.updateProfilePicture(user, File(_image!));
+                          FirebaseAuthService.updateProfilePicture(user as User, File(_image!));
                           Navigator.pop(context);
                         }
                       },
@@ -192,11 +204,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         final XFile? image = await picker.pickImage(
                             source: ImageSource.camera);
                         if (image != null) {
+                          print('Image Path: ${image.path}');
                           setState(() {
                             _image = image.path;
                           });
 
-                          FirebaseAuthService.updateProfilePicture(user, File(_image!));
+                          FirebaseAuthService.updateProfilePicture(user as User, File(_image!));
                           Navigator.pop(context);
                         }
                       },

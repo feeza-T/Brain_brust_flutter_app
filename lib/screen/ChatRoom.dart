@@ -2,7 +2,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
  import 'package:brain_brust/screen/FirstScreen.dart';
- 
+  import 'package:brain_brust/screen/Inbox.dart';
  
 
 class ChatRoom extends StatefulWidget {
@@ -22,7 +22,12 @@ class _ChatRoomState extends State<ChatRoom> {
       elevation: 0.5,
       shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       child: InkWell(
-       onTap:(){},
+       onTap:(){
+        
+          Navigator.push(context,MaterialPageRoute(builder: (_)=> Inbox(User: widget.user,)));
+
+
+       },
       child:ListTile(
         leading: ClipRRect(
           borderRadius: BorderRadius.circular(mq.height *.3),

@@ -80,17 +80,16 @@ class FirebaseAuthService {
     });
   }
 
-  static Future<void> updateProfilePicture(ChatUser user, File file) async {
+  static Future<void> updateProfilePicture(User user, File file) async {
     final ext = file.path.split('.').last;
-    final ref = storage.ref().child('profile_pictures/${user.id}.$ext');
+    print('Extension: $ext');
+    final ref = storage.ref().child('profile_pictures/${user.uid}.$ext');
 
-    await ref.putFile(file);
-    final imageUrl = await ref.getDownloadURL();
+    await ref.putFile(file, SettableMetadata(contentType: 'image/$ext')).then((taskSnapshot) {
+      print('Data Transferred:${taskSnapshot.bytesTransferred / 1000} kb');
+    });
 
-    // Update user's image URL in Firestore
-    await FirebaseFirestore.instance.collection('users').doc(user.id).update({'image': imageUrl});
-
-    // Update local user object
-    user.image = imageUrl;
+    me.image = await ref.getDownloadURL();
+    await firestore.collection('users').doc(user.uid).update({'image': me.image});
   }
 }

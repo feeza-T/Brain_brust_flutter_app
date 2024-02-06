@@ -40,7 +40,9 @@ class _ChatScreenState extends State<ChatScreen> {
           title: _isSearching
               ? TextField(
                   decoration: const InputDecoration(
-                      border: InputBorder.none, hintText: 'Name,Email,.....'),
+                    border: InputBorder.none,
+                    hintText: 'Name, Email, ...',
+                  ),
                   autofocus: true,
                   style: const TextStyle(fontSize: 17, letterSpacing: 0.5),
                   onChanged: (val) {
@@ -60,17 +62,19 @@ class _ChatScreenState extends State<ChatScreen> {
               : Text('Message'),
           actions: [
             IconButton(
-                onPressed: () {
-                  setState(() {
-                    _isSearching = !_isSearching;
-                  });
-                },
-                icon: Icon(_isSearching ? Icons.clear_all_rounded : Icons.search)),
+              onPressed: () {
+                setState(() {
+                  _isSearching = !_isSearching;
+                });
+              },
+              icon: Icon(_isSearching ? Icons.clear_all_rounded : Icons.search),
+            ),
             IconButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (_) => ProfileScreen(user: FirebaseAuthService.me)));
-                },
-                icon: Icon(Icons.more_vert)),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (_) => ProfileScreen(user: FirebaseAuthService.me)));
+              },
+              icon: Icon(Icons.more_vert),
+            ),
           ],
         ),
         floatingActionButton: Padding(
