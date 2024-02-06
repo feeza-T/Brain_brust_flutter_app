@@ -33,6 +33,7 @@ class login extends StatelessWidget {
                 Color(0xff2A1637),
               ]
           ),
+<<<<<<< Updated upstream
         ),
         child:
 
@@ -152,6 +153,99 @@ class login extends StatelessWidget {
        )
       ]
       )
+=======
+          Padding(
+            padding: const EdgeInsets.only(top: 200),
+            child: Container(
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(40),
+                  topRight: Radius.circular(40),
+                ),
+                color: Colors.white,
+              ),
+              height: double.infinity,
+              width: double.infinity,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 18, right: 18),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    TextField(
+                      controller: _emailController,
+                      decoration: const InputDecoration(
+                          suffixIcon: Icon(Icons.check, color: Colors.green),
+                          label: Text(
+                            'Gmail',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xffB81736),
+                            ),
+                          )),
+                    ),
+                    TextField(
+                      controller: _passwordController,
+                      obscureText: true,
+                      decoration: const InputDecoration(
+                          suffixIcon: Icon(Icons.visibility_off, color: Colors.green),
+                          label: Text(
+                            'Password',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xffB81736),
+                            ),
+                          )),
+                    ),
+                    const SizedBox(height: 20,),
+                    GestureDetector(
+                      onTap: _signIn,
+                      child: Container(
+                        height: 55,
+                        width: 300,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          gradient: const LinearGradient(
+                            colors: [
+                              Color(0xffB81736),
+                              Color(0xff281537),
+                            ],
+                          ),
+                        ),
+                       /* GestureDetector(
+                          onTap: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) => Forgot_pass()));
+                          },
+                          child: Align(
+                            alignment: Alignment.centerRight,
+                            child: Text(
+                              "Forgot Password?",
+                              style: TextStyle(color: Colors.red, fontSize: 15),
+                            ),
+                          ),
+                        ),
+
+                        */
+                        child: const Center(
+                          child: Text(
+                            'SIGN IN',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+>>>>>>> Stashed changes
     );
   }
 }
